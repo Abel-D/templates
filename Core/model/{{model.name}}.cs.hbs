@@ -1,0 +1,13 @@
+
+{
+    {{#with model}}
+    public class {{name}}
+    {
+       
+        {{#each properties }}
+            public {{type}} {{name}}
+        {{/each}}
+        
+    }
+  {{/with}}
+}
