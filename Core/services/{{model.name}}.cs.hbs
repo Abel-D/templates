@@ -1,7 +1,7 @@
 {{#with model}}
 {{#if import}}
 {{#each imports}}
-using {{imports}};
+using {{name}};
 {{/each}}
 {{/if}}
 
@@ -16,7 +16,7 @@ namespace {{nameSpace}}
     {{/each}}
     {{/if}}
 
-        public {{name}}( {{#if hasDependancy}} {{dependancy.class}} {{dependancy.name}}{{/if}})
+        public {{name}}( {{#if hasDependancy}} {{#each dependancy}} {{class}} {{name}},{{/each}} {{/if}})
         {
 
     {{#if hasDependancy}}
@@ -28,7 +28,7 @@ namespace {{nameSpace}}
         }
 
     {{#each methods}}
-        public async {{{returnType}}}  {{{name}}}
+        public async {{{returnType}}}  {{{name}}}({{#if hasInputParams}}{{#each params}}{{type}} {{name}} ,{{/each}} {{/if}})
         {
             try
             {
