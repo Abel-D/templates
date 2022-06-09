@@ -1,0 +1,11 @@
+{
+  
+public interface {{model.name}}
+{
+
+{{#each model.methods}}
+{{specialChar this.returnType}} {{this.name}}
+{{/each}}
+
+}
+}

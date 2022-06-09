@@ -1,0 +1,19 @@
+using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+{{#each imports}}
+using {{import}};
+{{/each}}
+{{#with DbContext}}
+    public {{context}}(DbContextOptions<{{context}}> options) : base(options)
+     {
+     }
+
+        {{#each dbsets}}
+        public virtual DbSet<{{setPropertyType}}> {{setPropertyName}} { get; set; }
+        {{/each}}
+
+        {{#each dbsets}}
+        public virtual DbSet<{{setPropertyType}}> {{setPropertyName}} { get; set; }
+        {{/each}}
+{{/with}}
