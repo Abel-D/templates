@@ -1,11 +1,19 @@
-{
+{{#with model}}
+{{#if import}}
+{{#each imports}}
+using {{name}};
+{{/each}}
+{{/if}}
+
+namespace {{nameSpace}}{
   
-public interface {{model.name}}
+public interface {{name}}
 {
 
-{{#each model.methods}}
-{{specialChar this.returnType}} {{this.name}}
+{{#each methods}}
+{{accessModeifier}} {{{ returnType}}} {{{name}}}
 {{/each}}
 
 }
 }
+{{/with}}
