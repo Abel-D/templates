@@ -7,11 +7,11 @@ using {{name}};
 
 namespace {{nameSpace}}{
   
-public interface {{name}}
+public interface I{{name}}
 {
 
 {{#each methods}}
-{{accessModeifier}} {{{ returnType}}} {{{name}}}
+{{accessModeifier}} {{{ returnType}}} {{{name}}}({{#if hasInputParams}}{{#each params}}{{type}} {{name}} ,{{/each}} {{/if}});
 {{/each}}
 
 }
