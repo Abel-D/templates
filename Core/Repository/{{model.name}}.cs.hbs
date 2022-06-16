@@ -1,0 +1,45 @@
+{{#with model}}
+{{#if import}}
+{{#each imports}}
+using {{name}};
+{{/each}}
+{{/if}}
+
+namespace {{nameSpace}}
+{
+    public class {{name}}  {{#if inherits}}:{{#each implements}}{{class}}{{/each}}{{/if}}
+    {
+
+    {{#if hasDependancy}}
+    {{#each dependancy}}
+        private readonly {{class}} _{{name}};
+    {{/each}}
+    {{/if}}
+
+        public {{name}}( {{#if hasDependancy}} {{#each dependancy}} {{class}} {{name}},{{/each}} {{/if}})
+        {
+
+    {{#if hasDependancy}}
+        {{#each dependancy}}
+            _{{name}} = {{name}}; 
+        {{/each}}
+    {{/if}}
+
+        }
+
+    {{#each methods}}
+        public async {{{returnType}}}  {{{name}}}({{#if hasInputParams}}{{#each params}}{{type}} {{name}} ,{{/each}} {{/if}})
+        {
+            try
+            {
+                throw not implemented Exception();
+            }
+            catch (Exception e)
+            {
+                return new Exception(e);
+            }
+        }
+    {{/each}}
+    }
+}
+{{/with}}
