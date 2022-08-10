@@ -1,19 +1,6 @@
-{{#with model}}
-{{#if import}}
-{{#each imports}}
-using {{name}};
-{{/each}}
-{{/if}}
-
-namespace {{nameSpace}}{
-  
-public interface I{{name}}
+//TO BE DONE
 {
 
-{{#each methods}}
-{{accessModeifier}} {{{ returnType}}} {{{name}}}({{#if hasInputParams}}{{#each params}}{{type}} {{name}} ,{{/each}} {{/if}});
-{{/each}}
+
 
 }
-}
-{{/with}}

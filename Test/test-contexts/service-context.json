@@ -1,0 +1,44 @@
+{
+    "name":"service-context",
+    "models":[
+        {
+          "name":"PostService",
+          "entity":"Post",
+          "methods":[
+        {
+          "name":"AddPost",
+          "accessModifier":"public",
+          "returnType":"Task<Post>"
+          
+        },
+        {
+          "name":"GetPosts",
+          "accessModifier":"public",
+          "returnType":"IEnumerable<Post>"
+         },
+        {
+          "name":"GetPostById",
+          "accessModifier":"public",
+          "returnType":"IEnumerable<Post>"
+          
+        }       
+  
+      ]},
+          {
+            "name":"CommentService",
+            "entity":"Comment",
+            "methods":[
+          {
+            "name":"AddComment",
+            "accessModifier":"public",
+            "returnType":"Task<Comment>"
+          },
+          {
+            "name":"GetComments",
+            "accessModifier":"public",
+            "returnType":"IEnumerable<Comment>"
+          }
+            ]}
+      ]
+      
+  }

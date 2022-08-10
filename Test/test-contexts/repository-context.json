@@ -1,0 +1,14 @@
+{
+  "name":"repository-context",
+  "models":[
+      {
+        "name":"PostRepository",
+        "methods":[
+      {
+        "name":"AddPost",
+        "accessModifier":"public",
+        "returnType":"Task<Post>"
+      }]
+          }
+        ]
+    }
